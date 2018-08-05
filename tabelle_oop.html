@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script>
+
+window.onload = function (){
+
+var body = document.getElementsByTagName("body")[0];
+	var tabelle,zeile,zelle;
+	var geklickt = 0;
+	var Tab = function(t,z,w,h) {
+		this.t = t;
+		this.z = z;
+		this.w = w || '300px';
+		this.h = h || '300px';
+
+		tabelle = document.createElement('table');
+		tabelle.setAttribute( 'border', 1);
+		tabelle.setAttribute('width',this.w)
+		tabelle.setAttribute('height',this.h)
+		body.appendChild( tabelle );
+	for(var i=0;i<this.t;i++) {
+  zeile = document.createElement('tr');
+	tabelle.appendChild( zeile );
+	for(var j=0;j<this.z;j++){
+	var zelle = document.createElement('td');
+	zeile.appendChild( zelle );
+	zelle.style.background = '#0C0';
+	//zelle.onclick = function(){console.log('###')};
+	zelle.addEventListener('click',function(){
+		geklickt++;
+		geklickt == 1 ?	console.log('hhhhh') : console.log('fffff')});
+			}
+		}
+	}
+	var teb = new Tab(8,4,'300px',undefined);
+	var tib = new Tab(3,5,'400px','340px');
+
+
+}
+
+	</script>
+	<style>
+	/*table {width: 6rem; height: 6rem}*/
+	</style>
+</head>
+<body>
+</body>
+</html>
